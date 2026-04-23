@@ -87,17 +87,17 @@ async function handleTestAPI() {
     addLog('API call successful');
     
     // Update context with profile data
-    if (result) {
+    if (result?.id || result?.email) {
       context.value = {
         ...context.value,
         identity: {
-          userId: result.id,
-          displayName: result.email,
+          userId: result.id ?? undefined,
+          displayName: result.email ?? undefined,
         },
         config: {
-          role: result.role,
-          subdomain: result.subdomain,
-          createdAt: result.createdAt,
+          role: result.role ?? undefined,
+          subdomain: result.subdomain ?? undefined,
+          createdAt: result.createdAt ?? undefined,
         },
       };
       connected.value = true;
