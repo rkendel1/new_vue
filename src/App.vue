@@ -85,6 +85,24 @@ async function handleTestAPI() {
     const result = await apiClient.get('/profile');
     apiStatus.value = `✅ API Connected: ${result.email || 'Success'}`;
     addLog('API call successful');
+    
+    // Update context with profile data
+    if (result) {
+      context.value = {
+        ...context.value,
+        identity: {
+          userId: result.id,
+          displayName: result.email,
+        },
+        config: {
+          role: result.role,
+          subdomain: result.subdomain,
+          createdAt: result.createdAt,
+        },
+      };
+      connected.value = true;
+      addLog('Profile data loaded into context');
+    }
   } catch (error) {
     apiStatus.value = `❌ API Error: ${error.message}`;
     addLog(`API call failed: ${error.message}`);
