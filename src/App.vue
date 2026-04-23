@@ -91,13 +91,13 @@ async function handleTestAPI() {
       context.value = {
         ...context.value,
         identity: {
-          userId: result.id ?? undefined,
-          displayName: result.email ?? undefined,
+          userId: result.id,
+          displayName: result.email,
         },
         config: {
-          role: result.role ?? undefined,
-          subdomain: result.subdomain ?? undefined,
-          createdAt: result.createdAt ?? undefined,
+          role: result.role,
+          subdomain: result.subdomain,
+          createdAt: result.createdAt,
         },
       };
       connected.value = true;
