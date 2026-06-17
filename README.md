@@ -1,3 +1,4 @@
+[![Try This Software](https://img.shields.io/badge/Try%20This%20Software-evaluate%20%E2%86%92-E3B341?style=flat-square&labelColor=0d1117)](https://trythissoftware.com/github/rkendel1/new_vue)
 # Vue 3 External App Reference
 
 A Vue 3 + Vite reference implementation of a StackLive-integrated external app.
